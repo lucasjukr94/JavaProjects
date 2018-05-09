@@ -1,10 +1,9 @@
 public class Veiculo{
-   //acesso protected - subclasses que acessam diretamente membros protected de sua superclasse
    protected String modelo,placa;
    protected int anoFabr;
    protected double valor;
    
-   public Veiculo(String pModelo, String pPlaca, int pAnoFabr, double pValor){
+   public Veiculo(String pModelo,String pPlaca,int pAnoFabr,double pValor){
       setModelo(pModelo);
       setPlaca(pPlaca);
       setAnoFabr(pAnoFabr);
@@ -36,11 +35,8 @@ public class Veiculo{
    }
    
    public void setValor(double valor){
-      if(valor>=0){
-         this.valor = valor;
-      }else{
-         this.valor = 0;
-      }
+      if(valor>=0) this.valor = valor;
+      else this.valor = 0;
    }
    
    public double getValor(){
@@ -49,9 +45,5 @@ public class Veiculo{
    
    public void deprecia(float taxa){
       setValor(valor-valor*taxa/100);
-   }
-   
-   public void imprime(){
-      System.out.printf("\nVeiculo:%s\nPlaca:%7s\nAno:%4d\nValor:R$%.2f\n",modelo,placa,anoFabr,valor);
    }
 }
